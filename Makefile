@@ -41,8 +41,8 @@ clean:
 	rm -rf *.o *.bin *.a *.out
 
 flash:
-	$(ESPTOOL) --port /dev/tty.SLAB_USBtoUART \
-			   --baud 480600 \
+	$(ESPTOOL) --port COM4/
+			   --baud 115200 \
 			   write_flash --flash_freq 40m --flash_mode dio --flash_size 32m \
 			   0x00000 main0x00000.bin \
 			   0x10000 main0x10000.bin \
